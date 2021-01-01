@@ -1,20 +1,20 @@
-name: Shell Commands 
+name: Shell Commands
 
 on: [push]
 
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: echo a string
         run: echo "Hello World"
-      - name: multiline script 
+      - name: multiline script
         run: |
-           node -v 
+           node -v
            npm -v
-      - name: python Command 
+      - name: python Command
         run: |
-          import platform 
+          import platform
           print
           (platform.processor())
         shell: python
@@ -23,7 +23,8 @@ jobs:
     needs: ["run-shell-command"]
     steps:
       - name: Directory PowerShell
-        run: Get-Location 
-      - name: Directory Bash 
-        run: pwd 
-        shell: bash 
+        run: Get-Location
+      - name: Directory Bash
+        run: pwd
+        shell: bash
+#test

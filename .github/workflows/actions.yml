@@ -1,6 +1,18 @@
 name: Actions Workflow
 
-on: [push, pull_request]
+on:
+  pull:
+    branches:
+      - master
+      - 'feature/*' #matches anything that starts with feature/a feature/b, but not feature/a/a
+      - 'feature/**' # will match feature/a feature/b AND feature/a/a
+  #repository_dispatch:
+  #  types: [build]
+  #schedule:
+  #  - cron: "* * * * *"
+  # push:
+  #pull_request:
+  #  types: [closed, assigned, opened, reopened]
 
 jobs:
   run-github-actions:

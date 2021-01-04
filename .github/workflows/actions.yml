@@ -1,7 +1,7 @@
 name: Actions Workflow
 
 on:
-  pull:
+  push:
     branches:
       - master
       - 'feature/*' #matches anything that starts with feature/a feature/b, but not feature/a/a
